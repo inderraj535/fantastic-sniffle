@@ -58,6 +58,8 @@
       <button data-v="Bajaji">Bajaji</button>
       <button data-v="Piki Piki">Piki Piki</button>
     </div>
+    <!-- Link to the separate Parts Price app -->
+    <a href="/fantastic-sniffle/Index_2.html" class="chip" style="margin-left:12px; background:rgba(255,255,255,.12); color:#fff; border-color:rgba(255,255,255,.12);">Parts price list</a>
   </header>
   <div class="chips" id="chips"></div>
   <div class="count" id="count"></div>
@@ -70,7 +72,7 @@ const SHOPS = [{"id": 1, "division": "Bajaji", "region": "Dar Es Salaam", "distr
 
 const state = { q: "", division: "all", district: "all" };
 const $ = id => document.getElementById(id);
-const norm = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9+ ]/g, " ").replace(/\s+/g, " ").trim();
+const norm = s => String(s || "").normalize("NFD").replace(/[^\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9+ ]/g, " ").replace(/\s+/g, " ").trim();
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const districts = [...new Set(SHOPS.map(s => s.district))].sort();
 
